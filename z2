@@ -1,27 +1,4 @@
-def calculate_imt(weight: float, height: float):
-    """Рассчитывает Индекс Массы Тела (ИМТ) и выводит результат.
-
-    Вычисляет ИМТ по формуле: вес / рост*рост. Выводит полученное значение,
-    округленное до одного знака после запятой, вместе с краткой
-    интерпретацией результата согласно базовой классификации.
-        weight (float): Вес пользователя в килограммах.
-        height (float): Рост пользователя в метрах.
-    """
-    imt = weight / (height*height)
-    if imt < 18.5:
-        category = "Недостаточная масса тела"
-    elif 18.5 <= imt < 25:
-        category = "Норма"
-    elif 25 <= imt < 30:
-        category = "Избыточная масса тела"
-    else:
-        category = "Ожирение"
-    print(f"Ваш Индекс Массы Тела (ИМТ): {imt:.1f} ({category})")
-
-
-try:
-    user_input = input("Введите ваш вес (кг) и рост (м) через пробел: ")
-    user_weight, user_height = map(float, user_input.split())
-    calculate_imt(user_weight, user_height)
-except ValueError:
-    print("Ошибка: введите два числа через пробел. Для дробных чисел используйте точку (например, 1.75).")
+user_input = input("Введите ваш вес (кг) и рост (м) через пробел: ")
+weight, height = map(float, user_input.split())
+imt = weight / (height * height)
+print(f"Ваш Индекс Массы Тела (ИМТ): {imt:.1f}")
