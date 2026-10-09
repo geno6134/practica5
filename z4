@@ -1,0 +1,52 @@
+import math
+
+def calculate_rectangle_area(width: float, height: float):
+    """Рассчитывает площадь прямоугольника.
+
+    Принимает на вход ширину и высоту прямоугольника, перемножает их
+    и возвращает полученный результат площади.
+
+    Args:
+        width (float): Ширина прямоугольника.
+        height (float): Высота прямоугольника.
+
+    Returns:
+        float: Площадь прямоугольника.
+    """
+    return width * height
+
+def calculate_circle_area(radius: float):
+    """Рассчитывает площадь круга.
+
+    Принимает на вход радиус круга и рассчитывает его площадь
+    по формуле: pi * r^2.
+
+    Args:
+        radius (float): Радиус круга.
+
+    Returns:
+        float: Площадь круга.
+    """
+    return math.pi * (radius**2)
+
+try:
+    print("--- Расчет площади прямоугольника ---")
+    rect_width = float(input("Введите ширину прямоугольника: "))
+    rect_height = float(input("Введите высоту прямоугольника: "))
+    if rect_width <= 0 or rect_height <= 0:
+        print("Ошибка: стороны прямоугольника должны быть больше нуля.")
+    else:
+        rect_area = calculate_rectangle_area(rect_width, rect_height)
+        print(f"Площадь прямоугольника: {rect_area:.2f}")
+
+    print("--- Расчет площади круга ---")
+    circle_radius = float(input("Введите радиус круга: "))
+
+    if circle_radius <= 0:
+        print("Ошибка: радиус круга должен быть больше нуля.")
+    else:
+        circle_area = calculate_circle_area(circle_radius)
+        print(f"Площадь круга: {circle_area:.2f}")
+
+except ValueError:
+    print("Ошибка: пожалуйста, введите корректное число.")
