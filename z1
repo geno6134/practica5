@@ -6,7 +6,7 @@ if user_income < 0:
     print("Ошибка: доход не может быть отрицательным.")
 else:
     tax_amount = user_income * TAX_RATE
-    net_income = user_income - tax_amount
+    tax_income = user_income - tax_amount
     print(f"Общая сумма дохода: {user_income:,.2f}".replace(",", " ")+ " руб.")
     print(f"Сумма налога: {tax_amount:,.2f}".replace(",", " ")+ " руб.")
-    print(f"Сумма после вычета налога: {net_income:,.2f}".replace(",", " ")+ " руб." )
+    print(f"Сумма после вычета налога: {tax_income:,.2f}".replace(",", " ")+ " руб." )
