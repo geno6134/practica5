@@ -13,12 +13,6 @@ def convert_usd_to_rub(amount_usd: float):
     USD_TO_RUB = 95.50
     return amount_usd * USD_TO_RUB
 
-try:
-    user_usd = float(input("Введите сумму в долларах ($): "))
-    result_rub = convert_usd_to_rub(user_usd)
-    formatted_usd = f"{user_usd:,.2f}".replace(",", " ")
-    formatted_rub = f"{result_rub:,.2f}".replace(",", " ")
-    print(f"Сумма в долларах: {formatted_usd} $")
-    print(f"Сумма в рублях по курсу 95.50: {formatted_rub} руб.")
-except ValueError:
-    print("Ошибка: пожалуйста, введите корректное число.")
+user_usd = float(input("Введите сумму в долларах ($): "))
+result_rub = convert_usd_to_rub(user_usd)
+print(f"Сумма в рублях по курсу 95.50: {result_rub:.2f} руб.")
